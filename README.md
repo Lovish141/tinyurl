@@ -94,6 +94,3 @@ npm run build && prisma generate && prisma migrate deploy
 ```
 
 This will generate the Prisma Client and apply any database migrations.
-```
-
-You can save this as `README.md` or include it in your project’s documentation! Let me know if you need more edits.
