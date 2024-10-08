@@ -41,7 +41,9 @@ export async function POST(req:NextRequest){
             }
         })
         return NextResponse.json({
-            shortUrl:shortUrl
+            shortUrl:shortUrl,
+            originalUrl:validation.data.longUrl,
+            createdAt:new Date().toISOString()
         },{
             status:201
         })
@@ -66,7 +68,7 @@ export async function GET(req:NextRequest){
             }
         })
         if(url){
-            return NextResponse.redirect(url.longUrl)
+            return NextResponse.json({longUrl:url.longUrl})
         }else{
             return NextResponse.json({
                 message:"URL Not Found"
