@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react';
-import { ClipboardCopy, Link as LinkIcon,SquareArrowOutUpRight, X, ChevronDown, ChevronUp } from 'lucide-react';
+import { ClipboardCopy, Link as LinkIcon,SquareArrowOutUpRight, ChevronDown, ChevronUp } from 'lucide-react';
 
 interface LinkResponse {
   shortUrl: string;
@@ -57,6 +57,7 @@ export  function LinkShortener() {
       saveToHistory(data);
       setUrl('');
     } catch (err) {
+        console.error((err as Error).message);
       setError('Failed to shorten URL. Please try again.');
     } finally {
       setIsLoading(false);

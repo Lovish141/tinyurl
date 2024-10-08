@@ -19,7 +19,7 @@ export default function Page({ params }: { params: { hashId: string } }) {
     fetchUrl().then((url) => {
       window.location.href = url;
     });
-  }, []);
+  }, );
   return (
     <div className="flex items-center justify-center min-h-screen w-full bg-gradient-to-br from-violet-50 to-indigo-50">
       <div className="loader bg-gradient-to-br from-violet-50 to-indigo-50 p-4">
